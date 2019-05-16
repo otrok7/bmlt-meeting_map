@@ -387,7 +387,7 @@ if (!class_exists("BMLTMeetingMap")) {
 		    
 		    // Include the Google Maps API files.
 		    $region = 'de';
-		    $ret = '</script><script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key='.$gKey;
+		    $ret = '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key='.$gKey;
 		    if (isset($options['region_bias']) && $options['region_bias']) {
 		        $ret .= '&region='.strtoupper($options['region_bias']);
 		        $region = $options['region_bias'];

@@ -714,14 +714,14 @@ function MeetingMap (
 	    var dropdownContent = document.createElement('div');
 	    dropdownContent.className = "menu-dropdown"
 
-	    var item = document.createElement('a');
+	    var item = document.createElement('button');
 	    item.innerHTML = c_g_menu_search;
 	    item.addEventListener('click', showSearchDialog);
 	    dropdownContent.appendChild(item);
-	    item = document.createElement('a');
+	    item = document.createElement('button');
 	    item.innerHTML = c_g_menu_nearMe;
 	    item.style.display = 'block';
-	    item.addEventListener('click', function() {
+	    item.addEventListener('click', function(e) {
 	    	if(navigator.geolocation) {
 	    		navigator.geolocation.getCurrentPosition(function(position) {
 	    			var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -731,19 +731,19 @@ function MeetingMap (
 	    	}
         });
 	    dropdownContent.appendChild(item);
-	    item = document.createElement('a');
+	    item = document.createElement('button');
 	    item.innerHTML = c_g_menu_filter;
 	    item.style.display = 'block';
 	    item.addEventListener('click', showFilterDialog);
 	    dropdownContent.appendChild(item);
-	    item = document.createElement('a');
+	    item = document.createElement('button');
 	    item.innerHTML = c_g_menu_list;
 	    item.style.display = 'block';
 	    item.addEventListener('click', showListView);
 	    dropdownContent.appendChild(item);
 	    var ios = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 	    if (!ios) {
-	    	item = document.createElement('a');
+	    	item = document.createElement('button');
 	    	item.innerHTML = c_g_menu_fullscreen;
 	    	item.style.display = 'block';
 	    	var toggleItem = item;
