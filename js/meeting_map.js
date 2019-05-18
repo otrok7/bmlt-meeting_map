@@ -1118,6 +1118,8 @@ function MeetingMap (
 	{
 		load_map ( in_div, in_coords );
 		this.loadAllMeetingsExt = loadAllMeetings;
+		this.openTableViewExt = openTableView;
 	};
 };
 MeetingMap.prototype.loadAllMeetingsExt = null;
+MeetingMap.prototype.openTableViewExt = null;
